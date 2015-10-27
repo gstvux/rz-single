@@ -51,7 +51,7 @@ module.exports = function( grunt ) {
 				files: [
 					'<%= dirs.sass %>/**'
 				],
-				tasks: ['sass', 'ftp-deploy']
+				tasks: ['sass']
 			},
 			livereload: {
 				options: {
