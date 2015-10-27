@@ -17,17 +17,6 @@ module.exports = function( grunt ) {
 			app: '../app',
 			tmp: 'tmp'
 		},
-		// javascript linting with jshint
-		jshint: {
-			options: {
-				jshintrc: '../.jshintrc'
-			},
-			all: [
-				'Gruntfile.js',
-				'<%= dirs.js %>/main.js'
-			]
-		},
-
 		// uglify to concat and minify
 		uglify: {
 			dist: {
@@ -64,17 +53,15 @@ module.exports = function( grunt ) {
 				],
 				tasks: ['sass', 'ftp-deploy']
 			},
-			/*js: {
+			livereload: {
+				options: {
+					livereload: true
+				},
 				files: [
-					'<%= jshint.all %>'
-				],
-				tasks: ['jshint', 'uglify']
-			},*/
-			ftp: {
-				files:[
-					'<%= dirs.app %>/**'
-				],
-				tasks: ['ftp-deploy']
+					'<%= dirs.css %>/*.css',
+					'<%= dirs.js %>/*.js',
+					'../**/*.php'
+				]
 			},
 			options: {
 				spawn: false
@@ -95,20 +82,18 @@ module.exports = function( grunt ) {
 					src: '**/*.{png,jpg,gif}',
 					dest: '<%= dirs.images %>/'
 				}]
-			},
-			'ftp-deploy':{
-
 			}
 		},
 		'ftp-deploy': {
 		  build: {
 			auth: {
-			  host: 'integramd.com.br',
+			  host: '**HOST**',
 			  port: 21,
 			  authKey: 'teste'
 			},
 			src: '../app/',
-			dest: '/public_html/rz-single',
+			dest: '/PATH',
+			forceVerbose: true,
 			exclusions: [
 				'app/.DS_Store',
 				'app/**/Thumbs.db'
