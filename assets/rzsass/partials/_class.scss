@@ -46,6 +46,24 @@ body.no-scroll{
   width: 100%;
 }
 
+@mixin set-frame-vertical($h, $overflow: false) {
+    @if ($overflow) {
+        overflow: $overflow;
+    }
+    @include vp-vertical($h);
+}
+
+@mixin frame-vertical($overflow: false) {
+    @if ($overflow) {
+        overflow: $overflow;
+    }
+    @include vp-vertical;
+}
+
+@mixin vp-vertical($h:100) {
+  height: $h+vh;
+}
+
 @mixin position($position, $args: ()) {
   $offsets: top right bottom left;
   position: $position;                                               // 1
@@ -309,13 +327,8 @@ body.no-scroll{
       @include linear-gradient( rgba($cor, $opc), transparent);
     }
 }
-@mixin frame-vertical($overflow: false) {
-    @if ($overflow) {
-        overflow: $overflow;
-    }
-    height: 100vh;
-    position: relative;
-}
+
+
 @mixin full-video($z: false){
     display: block;
     min-width: 100%;
@@ -346,7 +359,12 @@ body.no-scroll{
     background-color: $bg_color;
     color: $txt_color;
 }
-@mixin dashed-tittle($brd_color: $cinza, $brd_size:3px, $aln: center) {
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@mixin dashed-title($brd_color, $brd_size:3px, $aln: center) {
     display: table;
     white-space: nowrap;
     text-transform: uppercase;
@@ -365,7 +383,7 @@ body.no-scroll{
 }
 
 %inline-list{
-  display:inline-block;
+  display:block;
   list-style:none;
   @include clearfix();
   li{
