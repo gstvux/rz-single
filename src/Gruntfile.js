@@ -105,9 +105,7 @@ module.exports = function( grunt ) {
 	grunt.initConfig( rzConfig );
 
 	// Default Task
-	grunt.registerTask( 'default', [
-
-	] );
+	grunt.registerTask( 'default', ['sass'], ['imagemin'] );
 
 	grunt.registerTask( 'w', ['watch'] );
 	grunt.registerTask( 'f', ['ftp-deploy'] );
