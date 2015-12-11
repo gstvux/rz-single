@@ -47,7 +47,8 @@ module.exports = function( grunt ) {
     // watch for changes and trigger sass, jshint, uglify and livereload browser
     watch: {
       files:[
-        '../*.php'
+        '../*.php',
+        '../*.html',
       ],
       sass: {
         files: [
