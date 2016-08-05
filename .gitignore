@@ -39,7 +39,6 @@ js/libs/
 src/node_modules
 
 # app
-app/
-app/**
-
+*.html
+*.php
 .ftppass
