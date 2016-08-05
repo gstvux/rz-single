@@ -9,10 +9,10 @@ module.exports = function( grunt ) {
 
     // setting folder templates
     dirs: {
-      app: '../app',
-      css: '../app/css',
-      js: '../app/js',
-      images: '../app/images',
+      app: '../assets',
+      css: '../assets/css',
+      js: '../assets/js',
+      images: '../assets/images',
       sass: '../assets/rzsass',
       fonts: '../assets/fonts',
       tmp: 'tmp'
@@ -100,12 +100,14 @@ module.exports = function( grunt ) {
           port: 21,
           authKey: 'teste'
         },
-        src: '../app/',
+        src: '/',
         dest: '/PATH',
         forceVerbose: true,
         exclusions: [
-          'app/.DS_Store',
-          'app/**/Thumbs.db'
+          '/.DS_Store',
+          'Thumbs.db',
+          'assets/rzsass/',
+          'src/'
         ]
       }
     }
