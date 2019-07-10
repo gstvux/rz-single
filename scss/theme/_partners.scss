@@ -1,0 +1,16 @@
+.site-partners{
+    padding: 2em 0;
+    &-list{
+        @include distribute-itens($distribute:center);
+        li{
+            
+            text-align: center;
+            padding: 0.75em;
+            @include distribute-itens($distribute:center, $ul:false);
+            
+            img{
+                // align-items: flex-end;
+            }
+        }
+    }
+}

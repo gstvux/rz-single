@@ -1,0 +1,19 @@
+.debug {
+    background-color: rgba(red, 0.65);
+}
+
+.debug-border {
+    @extend .debug;
+    border: 1px solid black;
+}
+
+.breadcrumb {
+    font-size: 0.85em;
+    background-color: transparent;
+    padding: 0.5em 0;
+    margin-bottom: 0;
+    border-radius: 0px;
+    &-item + &-item::before {
+        color: green;
+    }
+}

@@ -1,0 +1,87 @@
+.site-category-nav {
+    background-color: white;
+
+    @include respond-to(767.98) {
+        .container {
+            padding: 0 15px;
+        }
+    }
+
+    &-list {
+        @include distribute-itens(flex-start);
+        margin-bottom: 0;
+
+        @include respond-to(768, min) {
+            justify-content: space-between;
+        }
+
+        @include respond-to(767.98) {
+            li:not(:first-child) {
+                padding-left: 0;
+            }
+        }
+
+        &-title {
+            font-weight: bolder;
+            font-size: 1em;
+            @include respond-to(767.98) {
+                padding-bottom: 0.75em;
+                width: 100%;
+            }
+        }
+
+        & li:not(&-title) {
+            margin-bottom: 0;
+            padding: 0 0.5em;
+            font-weight: 300;
+            @include respond-to(767.98) {
+                padding-top: 0.25em;
+                padding-bottom: 0.25em;
+            }
+
+            @include respond-to(768, min) {
+                text-align: center;
+            }
+
+            a {
+                color: $ui-grey;
+            }
+
+            a.current {
+                border-bottom: 0.25em solid $brand-orange;
+            }
+        }
+    }
+}
+
+#menu-menu-departamentos {
+    width: 100%;
+    .menu-item {
+        @include respond-to(767.98) {
+            border-bottom: 1px dotted $ui-grey3;
+        }
+        a:hover {
+            @include respond-to(768, min) {
+                text-decoration: underline;
+            }
+        }
+    }
+    .current-menu-item {
+        font-weight: bold;
+
+        a {
+            &:hover {
+                @include respond-to(768, min) {
+                    text-decoration: none;
+                }
+            }
+            @include respond-to(767.98) {
+                color: $brand-orange;
+            }
+        }
+
+        @include respond-to(768, min) {
+            border-bottom: 0.25em solid $brand-orange;
+        }
+    }
+}

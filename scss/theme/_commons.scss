@@ -1,0 +1,80 @@
+body {
+    color: $ui-grey;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 300;
+    color: black;
+}
+
+.wrap {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @include respond-to(1300, min) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include respond-to(768, min) {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+}
+
+.site-cta {
+    margin-bottom: 2em;
+    &-btn {
+        text-align: center;
+        display: block;
+        padding: 0.25em;
+        border: 2px solid $brand-orange;
+        font-size: 1.25em;
+        color: $brand-orange;
+        &:hover,
+        &:hover a,
+        &:active a {
+            color: black;
+            border-color: black;
+        }
+    }
+}
+
+.banner {
+    margin-bottom: 2em;
+}
+
+.orange {
+    color: $brand-orange;
+}
+.bg-orange {
+    background-color: $brand-orange;
+}
+.blue {
+    color: $brand-blue;
+}
+.bg-blue {
+    background-color: $brand-blue;
+}
+.gray3 {
+    color: $ui-grey3;
+}
+.bg-gray3 {
+    background-color: $ui-grey3;
+}
+
+.white {
+    color: white;
+}
+.bg-white {
+    background-color: white;
+}

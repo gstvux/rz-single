@@ -1,0 +1,58 @@
+/**
+ * Star rating
+ * https://hugogiraudel.com/2014/02/24/star-rating-system-with-sass/
+ */
+
+$font-size: 20px; // <-- Adjust this only!
+$star-width: 1.5em;
+$star-is_inactive-color: #eee !default;
+$star-colors: $brand-orange $brand-orange $brand-orange $brand-orange
+    $brand-orange !default;
+
+.rating {
+    margin: 10px 0;
+    @include distribute-itens;
+}
+
+.rating i {
+    @include size($star-width);
+    @include distribute-itens($distribute: center, $align-itens: center);
+    color: $ui-grey3;
+
+    font-style: normal;
+}
+
+/** Colors */
+@function stars-color($num, $star-colors: $star-colors) {
+    @return nth($star-colors, $num);
+}
+
+@for $i from 1 through 5 {
+    %rating-#{$i} {
+        color: stars-color($i);
+    }
+    @for $j from 1 through $i {
+        .rating-#{$i} .star-#{$j} {
+            @extend %rating-#{$i};
+        }
+    }
+    @if 5 > $i {
+        .rating-#{$i} .is_half {
+            @extend %rating-#{$i};
+            @extend %half-rating;
+        }
+    }
+}
+
+%half-rating {
+    border-right-color: $star-is_inactive-color;
+}
+
+@media print {
+    .rating {
+        -webkit-print-color-adjust: exact;
+        i {
+            text-shadow: none;
+        }
+    }
+}

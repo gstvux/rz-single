@@ -1,0 +1,56 @@
+.site-advantages{
+
+    background-color: $ui-grey3;
+    margin-bottom: 2em;
+    padding-top: 2em;
+    padding-bottom: 8em;
+    
+    &-list{
+        padding: 0.5em 1em;
+        align-items: center;
+        margin-bottom: 0;
+        @include distribute-itens($ul:false);
+        background-color: white;
+        list-style: none;
+        display: none;
+        
+        @include respond-to(575.98, min){
+            display: flex;
+            
+        }
+
+        @include respond-to(767.98){
+            font-size: 0.75em;
+           
+        }      
+
+        &-title{
+            font-size: 1.5em;
+            font-weight: 900;
+            color: $brand-orange;
+            width: 100%;
+            @include respond-to(1200, min){            
+                width: initial;
+            }
+        }
+        & li:not(&-title){
+            text-transform: uppercase;
+            color: #737373;            
+            display: flex;
+            justify-content: center;            
+            align-items: center;
+            @include respond-to(991.98){
+                width: 50%;
+            }
+        }
+        & svg{
+            @include size(3.75em);            
+            fill: #737373;            
+            margin-right: 5px;
+            margin-right: .3125rem;
+        }
+        & a{
+            color: #737373;
+        }
+    }
+}

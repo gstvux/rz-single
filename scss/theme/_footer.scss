@@ -1,0 +1,98 @@
+.site-footer{
+    
+    &-info{        
+        padding: 2em 0;        
+        ul{
+            @include distribute-itens;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &-logo{
+        @include respond-to(575.98){
+            flex: 1;
+            text-align: center;
+        }
+        text-align: left;
+
+    }
+    &-phone{
+        color: white;
+        font-size: 2em;        
+        padding-right: 2em;
+        @include respond-to(575.98){
+            padding-right: 0;
+            flex: 1;
+            text-align: center;
+        }
+        
+        & strong{            
+            font-weight: 700;
+            font-size: 1.25em;
+            line-height: 0.75;
+            display: block;
+        }
+        &-number{
+            font-size: 0.75em;
+        }
+        
+    }
+    &-secure{
+
+        @include distribute-itens(center)
+
+        @include respond-to(575.98){
+            //font-size: 0.5em;
+        }
+
+        @include respond-to(840){
+            width: 100%;
+            margin-top: 1em;
+        }
+
+        &-block{
+            border: 3px solid white;
+            padding: 0.5em 1em;
+            font-size: 24px;
+            color: white;
+            max-width: 432px;                        
+            @include round-corners(1em);
+            @include respond-to(575.98){ 
+                font-size: 16px;
+            }
+            & img{
+                margin-right: 1em;
+                @include respond-to(575.98){                    
+                    width: 1em;
+                }
+            }
+            
+        }
+    }
+    &-payments{
+        @include distribute-itens;
+        align-items: baseline;
+        font-size: 0.75em;
+        font-weight: 700;
+        padding: 2em 0;
+        h4{
+            position: relative;
+            bottom: -1em;
+            color: black;
+        }
+
+        &-gateways{
+
+        }
+        &-sec{            
+            img{               
+            }
+        }
+        &-credibility{
+            
+        }
+    }
+
+
+}

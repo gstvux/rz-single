@@ -1,0 +1,36 @@
+.newsletter {
+    margin-top: -2em;
+    margin-bottom: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    @extend .bg-blue;
+    h1 {
+        color: white;
+    }
+
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row button {
+        font-size: 1.15em;
+    }
+    input[type="text"],
+    input[type="email"] {
+        border: 0;
+        @include round-corners(0);
+        font-weight: 300;
+    }
+    input[type="submit"] {
+        font-weight: 300;
+        color: white;
+        @include round-corners(0);
+        border: 0;
+        width: 100%;
+        background-color: $brand-orange;
+    }
+}
+
+.screen-reader-response,
+.wpcf7-not-valid-tip,
+.wpcf7-response-output {
+    color: rgba(yellow, 0.75);
+}

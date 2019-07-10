@@ -1,0 +1,45 @@
+.products {
+    padding-top: 2em;
+    margin-bottom: 2em;
+
+    &.staked {
+        margin-top: -10em;
+    }
+
+    &-item {
+        margin-bottom: 2em;
+        & h1,
+        & h2,
+        & h3 {
+            font-size: 1em;
+            a {
+                color: black;
+            }
+        }
+
+        &-text {
+            font-size: 13px;
+            a {
+                color: $ui-grey1;
+                &:hover {
+                    color: $ui-grey;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.owl-carousel-product-nav {
+    .owl-nav {
+        position: absolute;
+        top: -2em;
+        right: 0;
+        width: 4em;
+        font-size: 2em;
+        .owl-prev,
+        .owl-next {
+            @include size(2em);
+        }
+    }
+}
