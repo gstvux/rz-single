@@ -1,21 +1,21 @@
 {
-  "name": "vkwp",
+  "name": "rz-single",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "prototype.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/gustavaum/acapulco-telhas.git"
+    "url": "git+ssh://git@github.com/gustavaum/rz-single.git"
   },
-  "author": "@gustavaum @viskoo",
+  "author": "@gustavaum",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gustavaum/acapulco-telhas/issues"
+    "url": "https://github.com/gustavaum/rz-single/issues"
   },
-  "homepage": "https://github.com/gustavaum/acapulco-telhas#readme",
+  "homepage": "https://github.com/gustavaum/rz-single#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "ionicons": "^4.6.1",
